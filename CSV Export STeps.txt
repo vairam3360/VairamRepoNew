@@ -1,0 +1,53 @@
+executeCSVDeleteBlankColumns
+
+exportRequest.outputFilename
+
+ReachAndFrequencyCSVExportProcessor
+
+MicrostrategyExportProcessor
+
+AutoExportStatusPostProcessor
+
+
+find . | xargs grep "mstrDocumentObjId--@--"
+
+File ziptmpFile = 
+
+          #if (${props.get("microstrategy.ethnics.disableCsvEnvBased")} == "N")
+                <export outputType="CSV"
+                        factory="com.nielsen.media.mediaView.export.WebAwareMediaViewExportTaskFactory"
+                        uiCompatible="true" autoGenerate="true" default="true">
+                    <property key="contextLocation">
+                        /WEB-INF/export/tam-export-taskcontext.xml
+                    </property>
+                    <property key="exportRequest.outputFilename">DaypartFile</property>
+                    <property key="MicrostrategyRMExportType">Document</property>
+                    <property key="MicrostrategyDocumentId">12A8101F4D28AEFF53A7908B3F1B8E0E</property>
+                    <property key="MicrostrategyServer">${props.get("microstrategy.iserver")}</property>
+                    <property key="disableCsvEnvBased">${props.get("microstrategy.ethnics.disableCsvEnvBased")}</property>
+                    <property key="MicrostrategyProject">${props.get("microstrategy.ethnics.projectName")}</property>
+                    <property key="MicrostrategyUser">${props.get("microstrategy.username")}</property>
+                    <property key="MicrostrategyPassword">${props.get("microstrategy.password")}</property>
+                    <property key="applyPostProcess">Y</property>
+                    <property key="enableExcelProcessing">Y</property>
+                    <property key="executeCSVDeleteBlankColumns">Y</property>
+                </export>
+                <export outputType="CSV_AD"
+                        factory="com.nielsen.media.mediaView.export.WebAwareMediaViewExportTaskFactory"
+                        uiCompatible="true" autoGenerate="true" default="true">
+                    <property key="contextLocation">
+                        /WEB-INF/export/tam-export-taskcontext.xml
+                    </property>
+                    <property key="exportRequest.outputFilename">TimePeriodFile</property>
+                    <property key="MicrostrategyRMExportType">Document</property>
+                    <property key="MicrostrategyDocumentId">63D7B885485CD6EDAB88C49CFAA0D71A</property>
+                    <property key="MicrostrategyServer">${props.get("microstrategy.iserver")}</property>
+                    <property key="disableCsvEnvBased">${props.get("microstrategy.ethnics.disableCsvEnvBased")}</property>
+                    <property key="MicrostrategyProject">${props.get("microstrategy.ethnics.projectName")}</property>
+                    <property key="MicrostrategyUser">${props.get("microstrategy.username")}</property>
+                    <property key="MicrostrategyPassword">${props.get("microstrategy.password")}</property>
+                    <property key="applyPostProcess">Y</property>
+                    <property key="enableExcelProcessing">Y</property>
+                    <property key="executeCSVDeleteBlankColumns">Y</property>
+                </export>
+                #end
